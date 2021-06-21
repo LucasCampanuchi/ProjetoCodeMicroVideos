@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Category;
+use App\Models\CastMember;
+use App\Models\Movies;
+use App\Models\Genres;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +18,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/genres/{id}', function ($id) {
+    return view('genre')->with(['id' => $id]);
+});
+
+Route::get('/movies/{id}', function ($id) {
+    return view('movies')->with(['id' => $id]);
+});
+
+Route::get('/castmember/{id}', function ($id) {
+    return view('castmember')->with(['id' => $id]);
+});
+
+Route::get('/categories/{category}', function ($category) {
+    return view('categorias')->with(['category' => $category]);
+});
+

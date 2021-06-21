@@ -12,6 +12,11 @@ use App\Repository\Interfaces\CategoryRepositoryInterface;
 use App\Services\Interfaces\CategoryServiceInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Log;
+use App\Models\Category;
+
+
+
+
 
 class CategoryController extends Controller
 {
@@ -53,13 +58,13 @@ class CategoryController extends Controller
      */
     public function show($category)
     {
-        try {
-            $category = $this->categoryService->getById($category);
-        } catch (ModelNotFoundException $e) {
-            return response()->error('Model not Found', 404);
-            ;
+        $recebeValor = Category::find($category);
+        if($recebeValor == ""){
+            return response()->error('Categoria nao encontrada', 404);
         }
-        return  response()->success($category);
+        else{
+            return $recebeValor;
+        }       
     }
 
 

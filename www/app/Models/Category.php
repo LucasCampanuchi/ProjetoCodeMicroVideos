@@ -15,4 +15,9 @@ class Category extends BaseModel
         'description',
         'is_active'
     ];
+
+    public function moviesCategory()
+    {
+        return $this->hasMany(Movies::Class, 'id_categoria', 'id');
+    }
 }

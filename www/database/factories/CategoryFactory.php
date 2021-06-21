@@ -11,3 +11,4 @@ $factory->define(Category::class, function (Faker $faker) {
         'description' => $faker->boolean ? $faker->sentence() : null
     ];
 });
+

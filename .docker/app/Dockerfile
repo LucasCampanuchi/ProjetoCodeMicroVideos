@@ -32,7 +32,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 USER www-data
 
-RUN composer global require hirak/prestissimo
+#RUN composer global require hirak/prestissimo
 
 
 
